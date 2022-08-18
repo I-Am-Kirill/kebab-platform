@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import HeaderList from './HeaderList';
+import Registration from './Registration';
+import RegistrationWoker from './RegistrationWoker';
+import RegistrationUser from './RegistrationUser';
+
 
 // function App({ entries, entry, userSession }) {
 function App({ order }) {
@@ -14,7 +18,10 @@ function App({ order }) {
         <div className="max-w-700 center">
           <Routes>
             <Route path="/" element={<HeaderList order={order} />} />
-          </Routes>
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/regWoker" element={<RegistrationWoker />} />
+            <Route path="/regUser" element={<RegistrationUser />} />
+            </Routes>
         </div>
 
       </div>

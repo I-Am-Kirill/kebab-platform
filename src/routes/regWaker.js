@@ -1,19 +1,20 @@
 import express from 'express';
-import bcrypt from 'bcrypt';
-import { user } from '../db/models';
+import React from 'react';
+import { woker } from '../db/models';
+import bcrypt from 'bcrypt'
 import Layout from '../components/Layout';
 import { renderToString } from 'react-dom/server';
 
 const route = express.Router();
 
 route.post('/', async (req, res) => {
-  const { name, email, tel, address, password } = req.body;
+  const { name, email, password, tel } = req.body;
   const hashPassword = await bcrypt.hash(password, 10);
   try {
-    const user1 = await user.findOne({ where: { email } });
-    if (!user1) {
-      const newUser = await user.create({ email, name, password: hashPassword, tel, address });
-      req.session.userSession = { email: newUser.email, id: newUser.id };
+    const user = await woker.findOne({ where: { email } });
+    if (!user) {
+      const newUser = await woker.create({ email, name, tel, password: hashPassword, });
+      // req.session.userSession = { email: newUser.email, id: newUser.id };
       return res.json({ email: newUser.email });
     }
     res.status(400).json({ message: 'Такой email уже занят' });

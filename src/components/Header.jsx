@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Registration from './Registration'
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const submitWalker = (e) => {
     e.preventDefault();
-    useNavigate('/api/registration');
+    useNavigate('/registration');
   };
   return (
     <header>
@@ -19,8 +20,7 @@ export default function Header() {
         <div>
           <ul className="no-bullets no-margin no-padding right">
             <li className="pipe-separate t-light-green left"><Link to="/">home</Link></li>
-            <li className="pipe-separate t-light-green left"><Link to="/Registration">Registration</Link></li>
-            <li className="pipe-separate t-light-green left"><Link to="/login">login</Link></li>
+            <li className="pipe-separate t-light-green left"><Link to="/registration">Registration</Link></li>
           </ul>
         </div>
       </nav>

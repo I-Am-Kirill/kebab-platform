@@ -1,21 +1,22 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Registration() {
-  const submitWalker =  (e) => {
-    e.preventDefault();
-    useNavigate('/regWoker');
-  };
-  const submitUser =  (e) => {
-    e.preventDefault();
-    useNavigate('/regUser');
-  };
+  // let navigate = useNavigate()
+  // const submitWalker =  (e) => {
+  //   e.preventDefault();
+  //   navigate('/regWoker');
+  // };
+  // const submitUser =  (e) => {
+  //   e.preventDefault();
+  //   navigate('/regUser');
+  // };
   return (
     <div>Registration</div>
     ,
     <div>
-      <button type="submit" onSubmit={submitWalker}>Курьер</button>
-      <button type="submit" onSubmit={submitUser}>Пользователь</button>
+      <Link to='/regWoker'>Курьер</Link>
+      <Link to='/regUser'>Пользователь</Link>
     </div>
   );
 };

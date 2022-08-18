@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Registration({ setAuthState }) {
+export default function RegistrationWoker({ setAuthState }) {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     name: '',
