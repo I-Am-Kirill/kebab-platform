@@ -1,8 +1,6 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import { user } from '../db/models';
-import Layout from '../components/Layout';
-import { renderToString } from 'react-dom/server';
 
 const route = express.Router();
 

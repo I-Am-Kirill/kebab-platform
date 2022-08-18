@@ -6,6 +6,8 @@ import headerList from './routes/headerList';
 import regRouter from './routes/regRouter';
 import regUser from './routes/regUser';
 import regWaker from './routes/regWaker';
+import loginRouter from './routes/loginRouter';
+import authCheck from './middlewares/authCheck';
 
 const PORT = 3000;
 const app = express();
@@ -30,9 +32,10 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use('/', headerList);
 app.use('/registration', regRouter);
-app.use('/regWoker', regUser);
-app.use('/regUser', regWaker);
-// app.use(authCheck);
+app.use('/regWoker', regWaker);
+app.use('/regUser', regUser);
+app.use('/login', loginRouter);
+app.use(authCheck);
 
 app.listen(PORT, () => {
   console.log('Server start on', PORT);

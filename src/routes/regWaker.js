@@ -14,7 +14,7 @@ route.post('/', async (req, res) => {
     const user = await woker.findOne({ where: { email } });
     if (!user) {
       const newUser = await woker.create({ email, name, tel, password: hashPassword, });
-      // req.session.userSession = { email: newUser.email, id: newUser.id };
+      req.session.userSession = { email: newUser.email, id: newUser.id };
       return res.json({ email: newUser.email });
     }
     res.status(400).json({ message: 'Такой email уже занят' });

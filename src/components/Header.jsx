@@ -21,6 +21,7 @@ export default function Header() {
           <ul className="no-bullets no-margin no-padding right">
             <li className="pipe-separate t-light-green left"><Link to="/">home</Link></li>
             <li className="pipe-separate t-light-green left"><Link to="/registration">Registration</Link></li>
+            <li className="pipe-separate t-light-green left"><Link to="/login">Login</Link></li>
           </ul>
         </div>
       </nav>

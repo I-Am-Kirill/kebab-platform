@@ -5,7 +5,7 @@ import HeaderList from './HeaderList';
 import Registration from './Registration';
 import RegistrationWoker from './RegistrationWoker';
 import RegistrationUser from './RegistrationUser';
-
+import Login from './Login';
 
 // function App({ entries, entry, userSession }) {
 function App({ order }) {
@@ -21,6 +21,7 @@ function App({ order }) {
             <Route path="/registration" element={<Registration />} />
             <Route path="/regWoker" element={<RegistrationWoker />} />
             <Route path="/regUser" element={<RegistrationUser />} />
+            <Route path="/login" element={<Login />} />
             </Routes>
         </div>
 
