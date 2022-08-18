@@ -2,11 +2,11 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export default function Registration() {
-  const submitWalker = async (e) => {
+  const submitWalker = (e) => {
     e.preventDefault();
     useNavigate('/api/regWoker');
   };
-  const submitUser = async (e) => {
+  const submitUser = (e) => {
     e.preventDefault();
     useNavigate('/api/regUser');
   };
