@@ -38,6 +38,9 @@ module.exports = {
       discont: {
         type: Sequelize.STRING
       },
+      disprice: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

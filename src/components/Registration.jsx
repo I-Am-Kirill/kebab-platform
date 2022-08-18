@@ -2,13 +2,13 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export default function Registration() {
-  const submitWalker = (e) => {
+  const submitWalker =  (e) => {
     e.preventDefault();
-    useNavigate('/api/regWoker');
+    useNavigate('/regWoker');
   };
-  const submitUser = (e) => {
+  const submitUser =  (e) => {
     e.preventDefault();
-    useNavigate('/api/regUser');
+    useNavigate('/regUser');
   };
   return (
     <div>Registration</div>

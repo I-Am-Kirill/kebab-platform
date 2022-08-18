@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 export default function HeaderList({ order }) {
-  const [cart, setCart] = useState(order);
-  return (
+  const [cart, setCart] = useState(order || []);
+    return (
     <section className="section">
       <p>Доступные продукты:</p>
       <div className="content">

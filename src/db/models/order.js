@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.woker, { foreignKey: 'wokerId' });
-      this.belongsTo(models.history, { foreignKey: 'orderId' });
+      this.hasMany(models.history, { foreignKey: 'orderId' });
     }
   }
   order.init({
@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     img: DataTypes.STRING,
     price: DataTypes.STRING,
     discont: DataTypes.STRING,
+    disprice: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'order',

@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { application } from 'express';
 import morgan from 'morgan';
 import headerList from './routes/headerList';
 
@@ -9,7 +9,6 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-
 app.use('/', headerList);
 
 app.listen(PORT, () => {

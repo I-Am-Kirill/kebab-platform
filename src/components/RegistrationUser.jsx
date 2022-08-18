@@ -18,7 +18,7 @@ export default function Registration({ setAuthState }) {
   };
   const submitHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/regUser', {
+    const response = await fetch('/regUser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export default function Registration({ setAuthState }) {
   return (
     <div>
       <h1>Registration Page</h1>
-      <form onSubmit={submitHandler}>
+       <form onSubmit={submitHandler}>
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Имя</label>
           <input type="text" name="name" onChange={changeHandler} value={inputs.name} className="form-control" id="exampleInputPassword1" placeholder="Name" />
@@ -51,7 +51,7 @@ export default function Registration({ setAuthState }) {
         </div>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Адрес</label>
-          <input type="address" name="address" onChange={changeHandler} value={inputs.address} className="form-control" id="exampleInputAddress" aria-describedby="addressHelp" placeholder="Enter address" />
+           <input type="address" name="address" onChange={changeHandler} value={inputs.address} className="form-control" id="exampleInputAddress" aria-describedby="addressHelp" placeholder="Enter address" />
           <small id="emailHelp" className="form-text text-muted" />
         </div>
         <div className="form-group">

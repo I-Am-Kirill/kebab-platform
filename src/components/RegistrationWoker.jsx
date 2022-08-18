@@ -17,7 +17,7 @@ export default function Registration({ setAuthState }) {
   };
   const submitHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/regWoker', {
+    const response = await fetch('/regWoker', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function Registration({ setAuthState }) {
   return (
     <div>
       <h1>Registration Page</h1>
-      <form onSubmit={submitHandler}>
+           <form onSubmit={submitHandler}>
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Имя</label>
           <input type="text" name="name" onChange={changeHandler} value={inputs.name} className="form-control" id="exampleInputPassword1" placeholder="Name" />
