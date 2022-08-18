@@ -13,13 +13,13 @@ route.post('/', async (req, res) => {
   try {
     const waker1 = await woker.findOne({ where: { email } });
     const user1 = await user.findOne({ where: { email } });
+    console.log(user1)
     if (user1 || waker1) {
-      const checkPass = await bcrypt.compare(password, user.password ||
-        password, woker.password);
+      const checkPass = await bcrypt.compare(password, user1.password || waker1.password);
       if (checkPass) {
-        req.session.userSession = { email: user.email, name: user.name, id: user.id } ||
-          { email: woker.email, name: woker.name, id: woker.id };
-        return res.json({ name: user.name } || { name: woker.name });
+        req.session.userSession = { email: user1.email, name: user1.name, id: user1.id } ||
+          { email: waker1.email, name: waker1.name, id: waker1.id };
+        return res.json({ name: user1.name } || { name: waker1.name });
       }
       res.status(400).json({ message: 'Такой email уже занят' });
     }

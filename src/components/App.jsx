@@ -7,6 +7,7 @@ import RegistrationWoker from './RegistrationWoker';
 import RegistrationUser from './RegistrationUser';
 import Login from './Login';
 
+const [authState, setAuthState] = useState(userSession || null);
 // function App({ entries, entry, userSession }) {
 function App({ order }) {
   // const [authState, setAuthState] = useState(userSession || null);
