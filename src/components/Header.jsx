@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Registration from './Registration'
 
 export default function Header() {
+  const submitWalker = (e) => {
+    e.preventDefault();
+    useNavigate('/api/registration');
+  };
   return (
     <header>
       <nav className="clearfix mar-b-1 nav">
@@ -14,7 +19,7 @@ export default function Header() {
         <div>
           <ul className="no-bullets no-margin no-padding right">
             <li className="pipe-separate t-light-green left"><Link to="/">home</Link></li>
-            <li className="pipe-separate t-light-green left"><Link to="/registration">registration</Link></li>
+            <li className="pipe-separate t-light-green left"><Link to="/registration">login</Link></li>
             <li className="pipe-separate t-light-green left"><Link to="/login">login</Link></li>
           </ul>
         </div>
