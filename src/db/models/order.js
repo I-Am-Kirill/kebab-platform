@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.woker, { foreignKey: 'wokerId' });
-      this.belongsTo(models.history, { foreignKey: 'orderId' });
+      // this.belongsTo(models.history, { foreignKey: 'orderId' });
     }
   }
   order.init({
