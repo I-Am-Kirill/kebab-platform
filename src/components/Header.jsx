@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Registration from './Registration'
+// import Registration from './Registration'
 
 export default function Header() {
   const submitWalker = (e) => {
@@ -19,8 +19,8 @@ export default function Header() {
         <div>
           <ul className="no-bullets no-margin no-padding right">
             <li className="pipe-separate t-light-green left"><Link to="/">home</Link></li>
-            <li className="pipe-separate t-light-green left"><Link to="/registration">login</Link></li>
-            <li className="pipe-separate t-light-green left"><Link to="/login">login</Link></li>
+            {/* <li className="pipe-separate t-light-green left"><Link to="/registration">login</Link></li>
+            <li className="pipe-separate t-light-green left"><Link to="/login">login</Link></li> */}
           </ul>
         </div>
       </nav>
