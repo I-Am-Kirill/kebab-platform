@@ -21,7 +21,7 @@ route.get('/details/:id', async (req, res) => {
   // const initState = { path: req.originalUrl, userSession: req.session.userSession };
   const initState = { path: req.originalUrl };
   const orderid = await order.findByPk(id);
-  initState.student = orderid;
+  initState.orderid = orderid;
   const html = renderToString(<Layout initState={initState} />);
   res.write('<!DOCTYPE html>');
   res.end(html);
