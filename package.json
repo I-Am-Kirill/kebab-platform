@@ -29,13 +29,16 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@2gis/mapgl": "^1.29.0",
+    "2gis-maps": "^3.7.1",
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "express": "^4.18.1",
     "hbs": "^4.2.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "sequelize": "^6.21.3"
   },
