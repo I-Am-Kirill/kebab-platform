@@ -23,8 +23,8 @@ function App({
             <Route path="/details/:id" element={<ProduktDetails orderid={orderid} />} />
             <Route path="/addProdukt" element={<AddProdukt />} />
             <Route path="/registration" element={<Registration />} />
-            <Route path="/regWoker" element={<RegistrationWoker />} />
-            <Route path="/regUser" element={<RegistrationUser />} />
+            <Route path="/regWoker" element={<RegistrationWoker authState={authState} setAuthState={setAuthState} />} />
+            <Route path="/regUser" element={<RegistrationUser authState={authState} setAuthState={setAuthState} />} />
             <Route path="/login" element={<Login authState={authState} setAuthState={setAuthState} />} />
           </Routes>
         </div>
