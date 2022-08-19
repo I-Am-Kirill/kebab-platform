@@ -24,7 +24,7 @@ export default function Login({ setAuthState }) {
     });
     if (response.ok) {
       const data = await response.json();
-      setAuthState(data); // 
+      setAuthState(data); 
       navigate('/');
     }
   };

@@ -11,10 +11,13 @@ import Login from './Login';
 
 // const [authState, setAuthState] = useState(userSession || null);
 
-function App({ order, orderid }) {
+function App({
+  order, orderid, entries, entry, userSession,
+}) {
+  const [authState, setAuthState] = useState(userSession || null);
   return (
     <>
-      <Header />
+      <Header authState={authState} setAuthState={setAuthState} />
       <div className="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
         <div className="max-w-700 center">
           <Routes>
