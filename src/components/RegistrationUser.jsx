@@ -9,6 +9,7 @@ export default function RegistrationUser({ setAuthState }) {
     tel: '',
     address: '',
     password: '',
+    isworker: false,
   });
   const changeHandler = (e) => {
     setInputs((prev) => ({

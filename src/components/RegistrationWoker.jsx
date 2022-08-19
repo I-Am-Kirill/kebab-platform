@@ -8,6 +8,7 @@ export default function RegistrationWoker({ setAuthState }) {
     email: '',
     tel: '',
     password: '',
+    isworker: true,
   });
   const changeHandler = (e) => {
     setInputs((prev) => ({
@@ -26,6 +27,7 @@ export default function RegistrationWoker({ setAuthState }) {
     });
     if (response.ok) {
       const data = await response.json();
+      // console.log(data);
       setAuthState(data);
       navigate('/');
     }
