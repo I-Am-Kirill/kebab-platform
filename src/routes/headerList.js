@@ -41,4 +41,6 @@ route.post('/addProdukt', async (req, res) => {
   res.sendStatus(200);
 });
 
+
+
 export default route;
