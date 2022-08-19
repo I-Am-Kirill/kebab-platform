@@ -14,6 +14,7 @@ function App({
 }) {
   const [authState, setAuthState] = useState(userSession || null);
   // const [userState, setUserState] = useState(userSession || null);
+  // console.log(authState);
   return (
     <>
       <Header authState={authState} setAuthState={setAuthState} />
@@ -22,7 +23,7 @@ function App({
           <Routes>
             <Route path="/" element={<HeaderList order={order} />} />
             <Route path="/details/:id" element={<ProduktDetails orderid={orderid} />} />
-            <Route path="/addProdukt" element={<AddProdukt />} />
+            <Route path="/addProdukt" element={<AddProdukt authState={authState} setAuthState={setAuthState} />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/regWoker" element={<RegistrationWoker authState={authState} setAuthState={setAuthState} />} />
             <Route path="/regUser" element={<RegistrationUser authState={authState} setAuthState={setAuthState} />} />
