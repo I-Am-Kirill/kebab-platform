@@ -13,8 +13,6 @@ const PORT = 3000;
 const app = express();
 const FileStore = store(session);
 
-
-
 const sessionConfig = {
   name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
   secret: process.env.SESSION_SECRET ?? 'test',	// Секретное слово для шифрования, может быть любым
@@ -39,7 +37,6 @@ app.use('/regWoker', regWaker);
 app.use('/regUser', regUser);
 app.use('/login', loginRouter);
 // app.use(authCheck);
-
 
 app.listen(PORT, () => {
   console.log('Server start on', PORT);

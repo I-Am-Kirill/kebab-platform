@@ -9,8 +9,6 @@ import RegistrationWoker from './RegistrationWoker';
 import RegistrationUser from './RegistrationUser';
 import Login from './Login';
 
-// const [authState, setAuthState] = useState(userSession || null);
-
 function App({
   order, orderid, entries, entry, userSession,
 }) {
@@ -27,7 +25,7 @@ function App({
             <Route path="/registration" element={<Registration />} />
             <Route path="/regWoker" element={<RegistrationWoker />} />
             <Route path="/regUser" element={<RegistrationUser />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login authState={authState} setAuthState={setAuthState} />} />
           </Routes>
         </div>
 
