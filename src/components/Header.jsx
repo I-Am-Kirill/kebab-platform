@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Registration from './Registration'
 import { useNavigate } from 'react-router-dom';
 
-export default function Header() {
-  const submitWalker = (e) => {
+export default function Header({ authState, setAuthState }) {
+  const logoutHandler = async (e) => {
     e.preventDefault();
-    useNavigate('/registration');
+    const response = await fetch('/login/logout');
+    console.log(response);
+    if (response.ok) {
+      console.log('response.ok');
+      setAuthState(null);
+      useNavigate('/');
+    }
   };
   return (
     <header>
@@ -20,8 +25,17 @@ export default function Header() {
         <div>
           <ul className="no-bullets no-margin no-padding right">
             <li className="pipe-separate t-light-green left"><Link to="/">home</Link></li>
+            {!authState
+              ? (
+                <>
             <li className="pipe-separate t-light-green left"><Link to="/registration">Registration</Link></li>
             <li className="pipe-separate t-light-green left"><Link to="/login">Login</Link></li>
+            </>
+              ) : (
+                <li className="pipe-separate t-light-green left">
+                  <a onClick={logoutHandler} href="">logout</a>
+                </li>
+              )}
           </ul>
         </div>
       </nav>

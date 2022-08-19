@@ -24,6 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.STRING,
     discont: DataTypes.STRING,
     disprice: DataTypes.STRING,
+    lat: DataTypes.INTEGER,
+    lon: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'order',

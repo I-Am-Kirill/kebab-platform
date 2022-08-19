@@ -7,13 +7,13 @@ import RegistrationWoker from './RegistrationWoker';
 import RegistrationUser from './RegistrationUser';
 import Login from './Login';
 
-const [authState, setAuthState] = useState(userSession || null);
+
 // function App({ entries, entry, userSession }) {
-function App({ order }) {
-  // const [authState, setAuthState] = useState(userSession || null);
+function App({ order, entries, entry, userSession }) {
+  const [authState, setAuthState] = useState(userSession || null);
   return (
     <>
-      {/* <Header authState={authState} setAuthState={setAuthState} /> */}
+      <Header authState={authState} setAuthState={setAuthState} />
       <Header />
       <div className="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
         <div className="max-w-700 center">

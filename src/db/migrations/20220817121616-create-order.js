@@ -41,6 +41,12 @@ module.exports = {
       disprice: {
         type: Sequelize.STRING
       },
+      lat: {
+        type: Sequelize.INTEGER
+      },
+      lon: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
