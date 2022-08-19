@@ -13,7 +13,6 @@ export default function HeaderList({ order }) {
             <h1 className="box-title"><Link className="box-title" to={`/details/${el.id}`}>{el.name}</Link></h1>
             <p className="box-price">{el.price}</p>
             <button className="btn">В корзину</button>
-
             <button className="btn">подробнее</button>
           </div>
         ))}
