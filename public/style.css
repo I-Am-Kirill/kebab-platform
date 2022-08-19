@@ -1,88 +1,176 @@
 body {
-    margin: 0;
-}
+  margin: 0;
+  font-family: Arial;
+  background-color: #F4F4F4
+  }
 header {
-    margin: 0;
-    background-color: aquamarine;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  background-color: #1f1f1f;
+  height: 56px;
 }
 
-.left {
-    float: left;
-  }
-  
-.t-light-green {
-    color: #32bb7d;
+.container-links-header {
+  display: flex;
+  padding-top: .7%;
 }
-.no-bullets {
-    list-style-type: none;
-  }
-  .no-margin {
-    margin: 0;
-  }
-  .no-padding {
-    padding: 0;
-  }
-  .right {
-    float: right;
-  }
-  .clearfix:after {
-    content: " "; /* Older browser do not support empty content */
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
- }
- .mar-b-1 {
-    margin-bottom: 1em;
+
+.header-title {
+  color: white;
+  text-align: center;
+}
+
+.header-link {
+  color: white;
+  text-align:right;
+  padding-top: .7%;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.header-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.box-img{
+  height: 140px;
+    width: 350px;
+    border-radius: 15px 15px 0 0;
   }
 
-  img {
-    width: 30px;
-  }
-
-  .nav {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .nav:after {
-    content: " "; /* Older browser do not support empty content */
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
- }
  .box {
-    width: 100px;
-    height: 90px;
-    background-color: aquamarine;
+  position:relative;
+    width: 350px;
+    height: 210px;
+    background-color: rgba(213, 213, 213, 0.12);
     padding-bottom: 50px;
     /* padding-left: 5px; */
     margin-bottom: 10px;
+    border-radius: 15px;
 
  }
  .box-title {
-    font-size: 10px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
  }
- .box-description {
-    font-size: 7px;
+
+ .box-price {
+  color: red;
+  font-weight: bold;
  }
+
  .btn {
-    width: 30px;
-    height: 10px;
-    font-size: 5px;
- }
+  position:absolute;
+  bottom:0;
+  right:0;
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #1d49aa;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
 
  .section {
   width: 80%;
   height: 100%;
-  background-color:#5a5c5e1e;
   margin-left: 10%;
+  background-color:white;
 }
 
 .content {
   display: flex;
   justify-content: space-around;
   height: 100%;
+  flex-wrap: wrap;
+}
+ .section-title {
+  padding-left: 30px;
+}
+
+.body-registration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://phonoteka.org/uploads/posts/2021-05/1620787963_11-phonoteka_org-p-fon-dlya-prezentatsii-povarskoe-delo-13.jpg');
+}
+.section-registration {
+  width: 40%;
+  height: 50%;
+  background-color: rgba(43, 43, 43, 0.632);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 25px;
+  color: white;
+  
+}
+
+.registration-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  padding-top: 30px;
+}
+
+.registration-description {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.registration-link-left {
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+
+}
+
+.registration-link-left:hover {
+  color: #e1e1e1;
+}
+
+.registration-link-left-container {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+
+.registration-link-right {
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+
+}
+
+.registration-link-right:hover {
+  color: #e1e1e1;
+}
+
+.registration-link-right-container {
+  margin-top: 50px;
+  margin-left: 70px;
+}
+
+.registration-links-container {
+  display: flex;
   flex-wrap: wrap;
 }

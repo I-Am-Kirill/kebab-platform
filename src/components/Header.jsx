@@ -1,29 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import Registration from './Registration'
+import { Link, useNavigate } from 'react-router-dom';
+import Registration from './Registration';
 
-export default function Header() {
-  const submitWalker = (e) => {
+export default function Header({ authState, setAuthState }) {
+  const logoutHandler = async (e) => {
     e.preventDefault();
-    useNavigate('/api/registration');
+    const response = await fetch('/login/logout');
+    console.log(response);
+    if (response.ok) {
+      console.log('response.ok');
+      setAuthState(null);
+      useNavigate('/');
+    }
   };
   return (
     <header>
-      <nav className="clearfix mar-b-1 nav">
-        <div>
-          <img src="https://img2.freepng.ru/20180401/fqq/kisspng-logo-small-business-handshake-marketing-joint-5ac09c4a29ec66.8818838615225723621717.jpg" alt="logo" />
-        </div>
-        <div>
-        <h1>deliveri-cebab</h1>
-        </div>
-        <div>
-          <ul className="no-bullets no-margin no-padding right">
-            <li className="pipe-separate t-light-green left"><Link to="/">home</Link></li>
-            {/* <li className="pipe-separate t-light-green left"><Link to="/registration">login</Link></li>
-            <li className="pipe-separate t-light-green left"><Link to="/login">login</Link></li> */}
-          </ul>
-        </div>
-      </nav>
+      <div>
+        <img className="header-logo" src="https://img2.freepng.ru/20180401/fqq/kisspng-logo-small-business-handshake-marketing-joint-5ac09c4a29ec66.8818838615225723621717.jpg" alt="logo" />
+      </div>
+      <div>
+        <h1 className="header-title">Deliveri-cebab</h1>
+      </div>
+      <div className="container-links-header">
+        <h3 className="header-link"><Link className="header-link" to="/">Home</Link></h3>
+        {!authState
+          ? (
+            <>
+              <h3 className="header-link"><Link className="header-link" to="/registration">Registration</Link></h3>
+              <h3 className="header-link"><Link className="header-link" to="/login">Login</Link></h3>
+            </>
+          ) : (
+            <a onClick={logoutHandler} className="header-link" href=""><h3 className="header-link">logout</h3></a>
+
+          )}
+      </div>
+
     </header>
   );
 }
