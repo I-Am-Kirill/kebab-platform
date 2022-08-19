@@ -9,17 +9,21 @@ const route = express.Router();
 
 route.post('/', async (req, res) => {
   const {
-    name, email, password, tel,
+    name, email, password, tel, isworker,
   } = req.body;
   const hashPassword = await bcrypt.hash(password, 10);
   try {
     const user = await woker.findOne({ where: { email } });
     if (!user) {
       const newUser = await woker.create({
-        email, name, tel, password: hashPassword,
+        email, name, tel, password: hashPassword, isworker,
       });
-      req.session.userSession = { email: newUser.email, id: newUser.id };
-      return res.json({ email: newUser.email });
+      req.session.userSession = {
+        email: newUser.email,
+        id: newUser.id,
+        isworker: newUser.isworker,
+      };
+      return res.json({ email: newUser.email, isworker: newUser.isworker, WorkerId: newUser.id });
     }
     res.status(400).json({ message: 'Такой email уже занят' });
   } catch (err) {
