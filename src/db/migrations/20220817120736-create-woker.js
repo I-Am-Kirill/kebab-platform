@@ -17,6 +17,9 @@ module.exports = {
       tel: {
         type: Sequelize.STRING
       },
+      isworker: {
+        type: Sequelize.BOOLEAN,
+      },
       password: {
         type: Sequelize.STRING
       },
