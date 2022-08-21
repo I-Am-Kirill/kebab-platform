@@ -9,7 +9,7 @@ import regWaker from './routes/regWaker';
 import loginRouter from './routes/loginRouter';
 // import authCheck from './middlewares/authCheck';
 
-const PORT = 3000;
+const PORT = process.env.PORT ?? 3000;
 const app = express();
 const FileStore = store(session);
 
