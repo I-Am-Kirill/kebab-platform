@@ -3,16 +3,24 @@ import { Link } from 'react-router-dom';
 
 export default function HeaderList({ order }) {
   const [cart, setCart] = useState(order);
+  // console.log(order);
+  cart.sort((a, b) => a.distance - b.distance);
+  // cart.map((el) => (console.log(el.distance)));
   return (
     <section className="section">
       <h2 className="section-title">Доступные продукты:</h2>
       <div className="content">
         {cart.map((el) => (
           <div className="box">
-              <img className="box-img" src={el.img} alt={el.name} />
-              <h1 className="box-title"><Link className="box-title" to={`/details/${el.id}`}>{el.name}</Link></h1>
-              <p className="box-price">{el.price}</p>
-              <button type="button" className="btn btn-left">подробнее</button>
+            <img className="box-img" src={el.img} alt={el.name} />
+            <h1 className="box-title"><Link className="box-title" to={`/details/${el.id}`}>{el.name}</Link></h1>
+            <p className="box-price">{el.price}</p>
+            <p className="box-price">
+              {Math.floor(el.distance / 100) / 10 }
+              {' '}
+              km.
+            </p>
+            <button type="button" className="btn btn-left">подробнее</button>
           </div>
         ))}
       </div>

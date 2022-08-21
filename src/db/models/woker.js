@@ -19,8 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     tel: DataTypes.STRING,
     isworker: DataTypes.BOOLEAN,
     password: DataTypes.STRING,
-    lat: DataTypes.INTEGER,
-    lon: DataTypes.INTEGER,
+    lat: DataTypes.REAL,
+    lon: DataTypes.REAL,
   }, {
     sequelize,
     modelName: 'woker',
