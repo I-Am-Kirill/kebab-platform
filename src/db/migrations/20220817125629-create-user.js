@@ -26,10 +26,10 @@ module.exports = {
         type: Sequelize.STRING,
       },
       lat: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.REAL,
       },
       lon: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.REAL,
       },
       createdAt: {
         allowNull: false,

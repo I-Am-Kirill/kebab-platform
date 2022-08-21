@@ -23,8 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     img: DataTypes.STRING,
     price: DataTypes.STRING,
     discont: DataTypes.STRING,
-    lat: DataTypes.INTEGER,
-    lon: DataTypes.INTEGER,
+    lat: DataTypes.NUMERIC(10, 5),
+    lon: DataTypes.NUMERIC(10, 5),
   }, {
     sequelize,
     modelName: 'order',
