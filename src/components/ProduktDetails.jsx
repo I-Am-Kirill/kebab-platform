@@ -3,8 +3,33 @@ import { useNavigate } from 'react-router-dom';
 import { load } from '@2gis/mapgl';
 // import { useParams } from 'react-router-dom';
 
-export default function ProduktDetails({ orderid }) {
+export default function ProduktDetails({ authState, setAuthState, orderid }) {
   const navigate = useNavigate();
+  const [user, setUserState] = useState(!authState);
+  const [orderState, setOrderState] = useState([orderid]);
+  const [data, setData] = useState({
+    img: orderState[0].img,
+    name: orderState[0].name,
+    description: orderState[0].description,
+    price: orderState[0].price,
+    discont: orderState[0].discont,
+    worker: orderState[0].wokerId,
+    user: user.id,
+  });
+
+  function toBasket(e) {
+    console.log(user)
+    console.log(data);
+    console.log(orderState);
+    e.preventDefault();
+    fetch('/toBasket', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  }
 
   function tutu() { console.log('tutu'); }
 
@@ -38,7 +63,6 @@ export default function ProduktDetails({ orderid }) {
   //   zoom: 13,
   // });
 
-  const [orderState, setOrderState] = useState([orderid]);
   //   const { id } = useParams();
   return (
     <section>
@@ -60,13 +84,13 @@ export default function ProduktDetails({ orderid }) {
       ))}
       <div id="containerMap" />
       {/* <div> */}
-      <button>В корзину</button>
       {/* </div> */}
       <div>
         <button>удалить</button>
         <button>редактировать</button>
       </div>
       <button type="button" onClick={navi} href="">Login</button>
+      <button type="button" onClick={toBasket}>В корзину</button>
     </section>
   );
 }

@@ -22,7 +22,7 @@ function App({
         <div className="max-w-700 center">
           <Routes>
             <Route path="/" element={<HeaderList order={order} />} />
-            <Route path="/details/:id" element={<ProduktDetails orderid={orderid} />} />
+            <Route path="/details/:id" element={<ProduktDetails authState={authState} setAuthState={setAuthState} orderid={orderid} />} />
             <Route path="/addProdukt" element={<AddProdukt authState={authState} setAuthState={setAuthState} />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/regWoker" element={<RegistrationWoker authState={authState} setAuthState={setAuthState} />} />

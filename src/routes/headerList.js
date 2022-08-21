@@ -1,7 +1,7 @@
 import express from 'express';
 import { renderToString } from 'react-dom/server';
 import React from 'react';
-import { order } from '../db/models';
+import { order, basket } from '../db/models';
 import Layout from '../components/Layout';
 
 const route = express.Router();
@@ -52,6 +52,24 @@ route.post('/addProdukt', async (req, res) => {
   //   name, location, description, img, price, discont, wokerId,
   // });
   await order.create(req.body);
+  res.sendStatus(200);
+});
+
+route.post('/toBasket', async (req, res) => {
+  const initState = { path: req.originalUrl, userSession: req.session.userSession };
+  // console.log('1', req.body);
+  // const { workerId } = authState;
+  // console.log(workerId);
+  // const {
+  //   name, location, description, img, price, discont, wokerId,
+  // } = req.body;
+  // console.log({
+  //   name, location, description, img, price, discont,
+  // });
+  // await order.create({
+  //   name, location, description, img, price, discont, wokerId,
+  // });
+  await basket.create(req.body);
   res.sendStatus(200);
 });
 
