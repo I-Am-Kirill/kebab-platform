@@ -5,7 +5,7 @@ import { load } from '@2gis/mapgl';
 
 export default function ProduktDetails({ authState, setAuthState, orderid }) {
   const navigate = useNavigate();
-  const [user, setUserState] = useState(!authState);
+  const [user, setUserState] = useState(authState);
   const [orderState, setOrderState] = useState([orderid]);
   const [data, setData] = useState({
     img: orderState[0].img,

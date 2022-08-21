@@ -7,6 +7,9 @@ import regRouter from './routes/regRouter';
 import regUser from './routes/regUser';
 import regWaker from './routes/regWaker';
 import loginRouter from './routes/loginRouter';
+import basket from './routes/basket';
+import list from './routes/list';
+
 // import authCheck from './middlewares/authCheck';
 
 const PORT = 3000;
@@ -36,6 +39,8 @@ app.use('/registration', regRouter);
 app.use('/regWoker', regWaker);
 app.use('/regUser', regUser);
 app.use('/login', loginRouter);
+app.use('/basket', basket);
+app.use('/list', list);
 // app.use(authCheck);
 
 app.listen(PORT, () => {

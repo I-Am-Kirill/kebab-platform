@@ -8,9 +8,11 @@ import Registration from './Registration';
 import RegistrationWoker from './RegistrationWoker';
 import RegistrationUser from './RegistrationUser';
 import Login from './Login';
+import List from './List';
+import Basket from './Basket';
 
 function App({
-  order, orderid, entries, entry, userSession,
+  order, orderid, entries, entry, userSession, basketid, listid,
 }) {
   const [authState, setAuthState] = useState(userSession || null);
   // const [userState, setUserState] = useState(userSession || null);
@@ -28,6 +30,8 @@ function App({
             <Route path="/regWoker" element={<RegistrationWoker authState={authState} setAuthState={setAuthState} />} />
             <Route path="/regUser" element={<RegistrationUser authState={authState} setAuthState={setAuthState} />} />
             <Route path="/login" element={<Login authState={authState} setAuthState={setAuthState} />} />
+            <Route path="/basket/:id" element={<Basket basketid={basketid} />} />
+            <Route path="/list/:id" element={<List listid={listid} />} />
           </Routes>
         </div>
 
