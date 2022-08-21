@@ -9,11 +9,10 @@ export default function HeaderList({ order }) {
       <div className="content">
         {cart.map((el) => (
           <div className="box">
-            <img className="box-img" src={el.img} alt={el.name} />
-            <h1 className="box-title"><Link className="box-title" to={`/details/${el.id}`}>{el.name}</Link></h1>
-            <p className="box-price">{el.price}</p>
-            <button className="btn">В корзину</button>
-            <button className="btn">подробнее</button>
+              <img className="box-img" src={el.img} alt={el.name} />
+              <h1 className="box-title"><Link className="box-title" to={`/details/${el.id}`}>{el.name}</Link></h1>
+              <p className="box-price">{el.price}</p>
+              <button type="button" className="btn btn-left">подробнее</button>
           </div>
         ))}
       </div>
