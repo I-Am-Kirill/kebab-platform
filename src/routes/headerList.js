@@ -1,6 +1,7 @@
 import express from 'express';
 import { renderToString } from 'react-dom/server';
 import React from 'react';
+import axios from 'axios';
 import { order, basket } from '../db/models';
 import Layout from '../components/Layout';
 
@@ -51,6 +52,16 @@ route.post('/addProdukt', async (req, res) => {
   // await order.create({
   //   name, location, description, img, price, discont, wokerId,
   // });
+  const address = req.body.location;
+  console.log(req.body);
+
+  const url = encodeURI(`https://catalog.api.2gis.com/3.0/items/geocode?q=${address}&fields=items.point&key=ruxkjk8859`);
+  const coordinates = await axios.get(url);
+  const { lat } = coordinates.data.result.items[0].point;
+  const { lon } = coordinates.data.result.items[0].point;
+  req.body.lat = lat;
+  req.body.lon = lon;
+  console.log(req.body);
   await order.create(req.body);
   res.sendStatus(200);
 });
