@@ -2,7 +2,7 @@ import express from 'express';
 import { renderToString } from 'react-dom/server';
 import React from 'react';
 import axios from 'axios';
-import { order, basket } from '../db/models';
+import { order, basket, list } from '../db/models';
 import Layout from '../components/Layout';
 
 const route = express.Router();
@@ -123,6 +123,15 @@ route.post('/toBasket', async (req, res) => {
   } catch (err) {
     console.error(err);
   }
+});
+
+route.post('/toList', async (req, res) => {
+  const initState = { path: req.originalUrl, userSession: req.session.userSession };
+  const arr = await req.body;
+  for (let i = 0; i < arr.length; i++) {
+    list.create(arr[i]);
+  }
+  res.sendStatus(200);
 });
 
 export default route;
