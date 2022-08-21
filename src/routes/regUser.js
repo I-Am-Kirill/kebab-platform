@@ -14,7 +14,7 @@ route.post('/', async (req, res) => {
     const user1 = await user.findOne({ where: { email } });
     if (!user1) {
       // const adress = 'Москва, Садовническая, 25';
-      console.log(address);
+      // console.log(address);
       const url = encodeURI(`https://catalog.api.2gis.com/3.0/items/geocode?q=${address}&fields=items.point&key=ruxkjk8859`);
       const coordinates = await axios.get(url);
       const { lat } = coordinates.data.result.items[0].point;
@@ -28,8 +28,15 @@ route.post('/', async (req, res) => {
         email: newUser.email,
         id: newUser.id,
         isworker: newUser.isworker,
+        lat: newUser.lat,
+        lon: newUser.lon,
       };
-      return res.json({ email: newUser.email, isworker: newUser.isworker });
+      return res.json({
+        email: newUser.email,
+        isworker: newUser.isworker,
+        lat: newUser.lat,
+        lon: newUser.lon,
+      });
     }
     res.status(400).json({ message: 'Такой email уже занят' });
   } catch (err) {

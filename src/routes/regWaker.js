@@ -11,8 +11,8 @@ route.post('/', async (req, res) => {
   const {
     name, email, password, tel, isworker, lat, lon,
   } = req.body;
-  console.log('14 regWorker', lat, lon);
-  console.log('15 regWorker', req.body);
+  // console.log('14 regWorker', lat, lon);
+  // console.log('15 regWorker', req.body);
   const hashPassword = await bcrypt.hash(password, 10);
   try {
     const user = await woker.findOne({ where: { email } });

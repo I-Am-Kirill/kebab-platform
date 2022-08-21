@@ -23,10 +23,14 @@ route.post('/', async (req, res) => {
           name: user1.name,
           id: user1.id,
           isworker: user1.isworker,
+          lat: user1.lat,
+          lon: user1.lon,
         };
         return res.json({
           name: user1.name,
           isworker: user1.isworker,
+          lat: user1.lat,
+          lon: user1.lon,
         });
       }
       res.status(400).json({ message: 'Не верный логин или пароль' });
