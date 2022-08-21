@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('histories', {
@@ -6,39 +5,39 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       userID: {
         type: Sequelize.INTEGER,
         references: {
-          model: "users",
-          key: "id"
-        }, 
-      onDelete: "cascade",
-      allowNull: false
+          model: 'users',
+          key: 'id',
+        },
+        onDelete: 'cascade',
+        allowNull: false,
       },
       orderId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "orders",
-          key: "id"
+          model: 'orders',
+          key: 'id',
         },
-        onDelete: "cascade",
-        allowNull: false
+        onDelete: 'cascade',
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW')
+        defaultValue: Sequelize.fn('NOW'),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW')
-      }
+        defaultValue: Sequelize.fn('NOW'),
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('histories');
-  }
+  },
 };

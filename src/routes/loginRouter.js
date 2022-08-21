@@ -8,7 +8,9 @@ import Layout from '../components/Layout';
 const route = express.Router();
 
 route.post('/', async (req, res) => {
-  const { email, password } = req.body;
+  const {
+    email, password, latitude, longitude,
+  } = req.body;
   try {
     const waker1 = await woker.findOne({ where: { email } });
     const user1 = await user.findOne({ where: { email } });

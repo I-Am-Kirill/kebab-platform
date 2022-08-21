@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login({ setAuthState }) {
   const navigate = useNavigate();
+  let nav = {};
   const [inputs, setInputs] = useState({
     email: '',
     password: '',
+    latitude: nav.latitude,
+    longitude: nav.longitude,
   });
   const changeHandler = (e) => {
     setInputs((prev) => ({
@@ -29,6 +32,17 @@ export default function Login({ setAuthState }) {
       console.log(data);
     }
   };
+
+  useEffect(async () => {
+    // let nav = {};
+    const pos = await window.navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      console.log({ latitude, longitude });
+      nav = { latitude, longitude };
+      // start(nav);
+    });
+  }, []);
+
   return (
     <div>
       <h1>Login</h1>

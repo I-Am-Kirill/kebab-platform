@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('orders', {
@@ -6,37 +5,43 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       wokerId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "wokers",
-          key: "id"
-        }, 
-      onDelete: "cascade",
-      allowNull: false
+          model: 'wokers',
+          key: 'id',
+        },
+        onDelete: 'cascade',
+        allowNull: false,
       },
       location: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       status: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       img: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       price: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       discont: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      },
+      lat: {
+        type: Sequelize.INTEGER,
+      },
+      lon: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -47,10 +52,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('NOW'),
-      }
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('orders');
-  }
+  },
 };
