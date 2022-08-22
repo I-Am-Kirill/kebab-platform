@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { load } from '@2gis/mapgl';
 // import { useParams } from 'react-router-dom';
 
 export default function ProduktDetails({ authState, setAuthState, orderid }) {
   const navigate = useNavigate();
   const [user, setUserState] = useState(authState);
-  const [orderState, setOrderState] = useState([orderid]);
+  const [orderState, setOrderState] = useState([orderid] || []);
+  const { id } = useParams();
   const [data, setData] = useState({
     img: orderState[0].img,
     name: orderState[0].name,
@@ -16,6 +17,12 @@ export default function ProduktDetails({ authState, setAuthState, orderid }) {
     worker: orderState[0].wokerId,
     user: user.id,
   });
+
+  useEffect(() => {
+    fetch(`/api/all/details/${id}`)
+      .then((res) => res.json())
+      .then((result) => setOrderState([result]));
+  }, []);
 
   async function deleteHandler(e) {
     e.preventDefault();

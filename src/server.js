@@ -12,6 +12,7 @@ import list from './routes/list';
 import deleteRouter from './routes/deleteRouter';
 import updateRouter from './routes/updateRouter';
 import produktRouter from './routes/productRouter';
+import apiEffects from './routes/api/apiEffect';
 
 // import authCheck from './middlewares/authCheck';
 
@@ -47,6 +48,8 @@ app.use('/list', list);
 app.use('/del', deleteRouter);
 app.use('/update', updateRouter);
 app.use('/api', produktRouter);
+app.use('/api/all', apiEffects);
+
 // app.use(authCheck);
 
 app.listen(PORT, () => {

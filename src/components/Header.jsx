@@ -39,7 +39,7 @@ export default function Header({ authState, setAuthState }) {
             ) : (
               <>
                 <a onClick={logoutHandler} className="header-link" href=""><h3 className="header-link">logout</h3></a>
-                <h3 className="header-link"><Link className="header-link" to={`/basket/${authState.id}`}>Basket/корзина</Link></h3>
+                <h3 className="header-link"><Link className="header-link" to={`/basket/${authState.id}`}>Basket</Link></h3>
               </>
             )}
 

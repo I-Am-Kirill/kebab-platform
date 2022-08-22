@@ -148,4 +148,19 @@ route.post('/toList', async (req, res) => {
   res.sendStatus(200);
 });
 
+route.delete('/toBasket/delete/:id', async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  await basket.destroy({ where: { user: id } });
+  res.redirect('http://localhost:3000/');
+  // res.sendStatus(200);
+});
+
+route.delete('/toList/delete/:id', async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  await list.destroy({ where: { worker: id } });
+  // res.sendStatus(200);
+});
+
 export default route;

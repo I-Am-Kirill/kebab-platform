@@ -28,8 +28,8 @@ export default function Login({ setAuthState }) {
     if (response.ok) {
       const data = await response.json();
       setAuthState(data);
-      // navigate('/');
-      console.log(data);
+      navigate('/');
+      // console.log(data);
     }
   };
 

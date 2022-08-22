@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function HeaderList({ order }) {
-  const [cart, setCart] = useState(order);
+  const [cart, setCart] = useState(order || []);
+
+  useEffect(() => {
+    fetch('/api/all/orders')
+      .then((res) => res.json())
+      .then((data) => setCart(data));
+  }, []);
   // console.log(order);
   cart.sort((a, b) => a.distance - b.distance);
   // cart.map((el) => (console.log(el.distance)));
