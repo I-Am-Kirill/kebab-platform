@@ -44,20 +44,22 @@ export default function Login({ setAuthState }) {
   }, []);
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={submitHandler}>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input type="email" name="email" onChange={changeHandler} value={inputs.email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-          <small id="emailHelp" className="form-text text-muted" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input type="password" name="password" onChange={changeHandler} value={inputs.password} className="form-control" id="exampleInputPassword1" placeholder="Password" />
-        </div>
-        <button type="submit" className="btn btn-primary">Login</button>
-      </form>
+    <div className="body-registration">
+      <section className="section-registration-2">
+        <h1 className="registration-title">Login</h1>
+        <form className="form" onSubmit={submitHandler}>
+          <div className="form-group">
+            <label htmlFor="exampleInputEmail1">Email address</label>
+            <input type="email" name="email" onChange={changeHandler} value={inputs.email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+            <small id="emailHelp" className="form-text text-muted" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Password</label>
+            <input type="password" name="password" onChange={changeHandler} value={inputs.password} className="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <button type="submit" className="btn btn-registration">Login</button>
+        </form>
+      </section>
     </div>
   );
 }

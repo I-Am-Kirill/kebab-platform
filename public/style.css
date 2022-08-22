@@ -125,6 +125,22 @@ header {
   cursor: pointer;
 }
 
+.btn-registration-4 {
+  position: absolute;
+  bottom: 1%;
+  left: 35%;
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #1f1f1f;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 .btn-right {
   position: absolute;
   bottom: 0;
@@ -206,6 +222,15 @@ header {
   height: 100%;
   background-image: url("https://phonoteka.org/uploads/posts/2021-05/1620787963_11-phonoteka_org-p-fon-dlya-prezentatsii-povarskoe-delo-13.jpg");
 }
+
+.body-registration-1 {
+  position: absolute;
+  width: 100%;
+  height: 145%;
+  background: url("https://phonoteka.org/uploads/posts/2021-05/1620787963_11-phonoteka_org-p-fon-dlya-prezentatsii-povarskoe-delo-13.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
 .section-registration {
   position: relative;
   width: 40%;
@@ -217,10 +242,32 @@ header {
   color: white;
 }
 
+.section-registration-4 {
+  position: relative;
+  width: 40%;
+  height: 85%;
+  background-color: rgba(43, 43, 43, 0.632);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 25px;
+  color: white;
+}
+
 .section-registration-1 {
   position: relative;
   width: 40%;
   height: 60%;
+  background-color: rgba(43, 43, 43, 0.632);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 25px;
+  color: white;
+}
+
+.section-registration-2 {
+  position: relative;
+  width: 35%;
+  height: 42%;
   background-color: rgba(43, 43, 43, 0.632);
   margin: auto;
   margin-top: 10%;
