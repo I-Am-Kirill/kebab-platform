@@ -9,6 +9,9 @@ import regWaker from './routes/regWaker';
 import loginRouter from './routes/loginRouter';
 import basket from './routes/basket';
 import list from './routes/list';
+import deleteRouter from './routes/deleteRouter';
+import updateRouter from './routes/updateRouter';
+import produktRouter from './routes/productRouter';
 
 // import authCheck from './middlewares/authCheck';
 
@@ -41,6 +44,9 @@ app.use('/regUser', regUser);
 app.use('/login', loginRouter);
 app.use('/basket', basket);
 app.use('/list', list);
+app.use('/del', deleteRouter);
+app.use('/update', updateRouter);
+app.use('/api', produktRouter);
 // app.use(authCheck);
 
 app.listen(PORT, () => {

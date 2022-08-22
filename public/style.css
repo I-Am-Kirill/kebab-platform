@@ -2,14 +2,21 @@ body {
   margin: 0;
   font-family: Arial;
   background-color: #f4f4f4;
+  
 }
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   margin: 0;
   background-color: #1f1f1f;
   height: 56px;
 }
+
 
 .container-links-header {
   display: flex;
@@ -29,9 +36,13 @@ header {
   padding-left: 10px;
 }
 
+.header-link:hover {
+  color: rgb(156, 156, 156);
+}
+
 .header-logo {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 65px;
 }
 
 .box-img {
@@ -44,22 +55,42 @@ header {
   position: relative;
   width: 350px;
   height: 210px;
-  background-color: rgba(213, 213, 213, 0.12);
+  background-color: rgba(213, 213, 213, 0.177);
   padding-bottom: 50px;
   /* padding-left: 5px; */
   margin-bottom: 10px;
   border-radius: 15px;
 }
+.box-price-div {
+  display: flex;
+  justify-content:flex-start;
+}
+
+.box-price-div-inner {
+  background-color: rgba(0, 0, 0, 0.047);
+  border-radius: 15px;
+  margin: 0 10px;
+  height: 35px;
+
+}
+
 .box-title {
   font-size: 20px;
   color: black;
   font-weight: bold;
   text-decoration: none;
 }
+.box-distance {
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+}
 
 .box-price {
   color: red;
   font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
 }
 
 .btn-left {
@@ -71,7 +102,23 @@ header {
   appearance: none;
   border: 0;
   border-radius: 5px;
-  background: #4676d7;
+  background: #1f1f1f;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-registration {
+  position: absolute;
+  bottom: 1%;
+  left: 41%;
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #1f1f1f;
   color: #fff;
   padding: 8px 16px;
   font-size: 1rem;
@@ -87,15 +134,26 @@ header {
   appearance: none;
   border: 0;
   border-radius: 5px;
-  background: #4676d7;
+  background: #1f1f1f;
   color: #fff;
   padding: 8px 16px;
   font-size: 1rem;
   cursor: pointer;
 }
 
+.btn-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: #464646;;
+
+}
+
 .btn:hover {
-  background: #1d49aa;
+  background: #191919;
+  color: #464646;;
 }
 
 .btn:focus {
@@ -103,21 +161,43 @@ header {
   box-shadow: 0 0 0 4px #cbd6ee;
 }
 
+.form {
+  width: 50%;
+  margin: auto;
+}
+
+
 .section {
+  /* position: fixed; */
   width: 80%;
   height: 100%;
   margin-left: 10%;
   background-color: white;
+  height: 100%;
+  /* margin-top: 50px; */
+  /* padding-top: 450px; */
 }
 
+.section-header {
+  background-attachment: fixed;
+  width: 80%;
+  margin-left: 10%;
+  height: 300px;
+  background-image: url("https://phonoteka.org/uploads/posts/2021-05/1620787963_11-phonoteka_org-p-fon-dlya-prezentatsii-povarskoe-delo-13.jpg");
+
+}
 .content {
+  margin-bottom: 30px;
+  background-color: #fff;
   display: flex;
   justify-content: space-around;
   height: 100%;
   flex-wrap: wrap;
 }
 .section-title {
+  padding-top: 20px;
   padding-left: 30px;
+  padding-bottom: 10px;
 }
 
 .body-registration {
@@ -127,8 +207,20 @@ header {
   background-image: url("https://phonoteka.org/uploads/posts/2021-05/1620787963_11-phonoteka_org-p-fon-dlya-prezentatsii-povarskoe-delo-13.jpg");
 }
 .section-registration {
+  position: relative;
   width: 40%;
   height: 50%;
+  background-color: rgba(43, 43, 43, 0.632);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 25px;
+  color: white;
+}
+
+.section-registration-1 {
+  position: relative;
+  width: 40%;
+  height: 60%;
   background-color: rgba(43, 43, 43, 0.632);
   margin: auto;
   margin-top: 10%;
@@ -186,7 +278,154 @@ header {
   flex-wrap: wrap;
 }
 #containerMap {
-  width: 500px;
-  height: 300px;
-  background-color: red;
+  width: 36%;
+  height: 35%;
+  background-color: rgba(255, 0, 0, 0);
+  position: absolute;
+  bottom: 10%;
+}
+
+.basket-content {
+  width: 100%;
+}
+
+.basket-box {
+  width: 100%;
+  height: 10%;
+}
+
+.basket-box-img {
+  width: 30px;
+}
+
+.basket-box-title{
+  font-size: 15px;
+}
+
+.basket-box-price {
+  font-size: 10px;
+  text-decoration: line-through;
+}
+
+.basket-box-pricedis {
+  font-size: 10px;
+  color: rgb(255, 0, 0);
+}
+
+.details-section {
+  width: 60%;
+  height: 80%;
+  background-color: rgba(43, 43, 43, 0.632);
+  margin: auto;
+  margin-top: 8%;
+  border-radius: 25px;
+}
+
+.img-details {
+  border-radius: 25px;
+  width: 30%;
+  position: absolute;
+  right: 47%;
+  top: 20%;
+
+}
+
+.details-title {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.container-details {
+  position: absolute;
+  left: 57%;
+  top: 24%;
+}
+
+.details-description {
+  text-align: justify;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+
+.details-btn-2 {
+  position: absolute;
+  right: 25%;
+  top: 50%;
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.details-btn-1 {
+  position: absolute;
+  right: 33%;
+  top: 50%;
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.details-btn-3 {
+  position: absolute;
+  right: 25%;
+  top: 50%;
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.details-btn-4 {
+  position: absolute;
+  right: 33%;
+  top: 50%;
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.details-price {
+  position: absolute;
+  top: 42%;
+  right: 26%;
+  font-size: 20px;
+  color: #f00;
+  text-decoration: line-through;
+}
+
+.details-disprice {
+  position: absolute;
+  top: 45%;
+  right: 26%;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
 }

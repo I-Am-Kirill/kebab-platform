@@ -12,38 +12,52 @@ route.get('/', async (req, res) => {
     const initState = { path: req.originalUrl, userSession: req.session.userSession };
     // const initState = { path: req.originalUrl };
     const order1 = await order.findAll();
-    const latitude = req.session.userSession.lat;
-    const longitude = req.session.userSession.lon;
+    // const latitude = req.session.userSession.lat;
+    // const longitude = req.session.userSession.lon;
     // console.log('17 headerList', latitude, longitude);
-    const pointStart = {
-      lat: req.session.userSession.lat,
-      lon: req.session.userSession.lon,
-    };
+    let pointStart = {};
+    // console.log(req);
+    if (req.session.hasOwnProperty('userSession')) {
+      pointStart = {
+        lat: req.session.userSession.lat,
+        lon: req.session.userSession.lon,
+      };
+    } else {
+      pointStart = {
+        lat: 55.755864,
+        lon: 37.617698,
+      };
+    }
     for (let i = 0; i < order1.length; i++) {
       const pointEnd = {
         lat: order1[i].dataValues.lat,
         lon: order1[i].dataValues.lon,
       };
       // console.log('27 headerList', pointStart, pointEnd);
-      const getDistance = await axios.post(
-        'https://routing.api.2gis.com/get_dist_matrix?key=07916d49-e084-453b-956c-bcb324ed1487&version=2.0',
-        {
-          points: [
-            pointStart,
-            pointEnd,
-          ],
-          sources: [
-            0,
-          ],
-          targets: [
-            1,
-          ],
-        },
-      );
+      //
+      //
+      // const getDistance = await axios.post(
+      //   'https://routing.api.2gis.com/get_dist_matrix?key=07916d49-e084-453b-956c-bcb324ed1487&version=2.0',
+      //   {
+      //     points: [
+      //       pointStart,
+      //       pointEnd,
+      //     ],
+      //     sources: [
+      //       0,
+      //     ],
+      //     targets: [
+      //       1,
+      //     ],
+      //   },
+      // );
+      // const { distance } = getDistance.data.routes[0];
+      // order1[i].dataValues.distance = distance;
+      order1[i].dataValues.distance = 15;
+      //
+      //
       // console.log(getDistance.data);
-      const { distance } = getDistance.data.routes[0];
       // console.log(distance);
-      order1[i].dataValues.distance = distance;
     }
     // order1.map((el) => (order1[el].dataValues.distance = el));
 

@@ -63,29 +63,31 @@ export default function RegistrationWoker({ setAuthState }) {
   };
 
   return (
-    <div>
-      <h1>Registration Page</h1>
-      <form onSubmit={submitHandler}>
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Имя</label>
-          <input type="text" name="name" onChange={changeHandler} value={inputs.name} className="form-control" id="exampleInputPassword1" placeholder="Name" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email</label>
-          <input type="email" name="email" onChange={changeHandler} value={inputs.email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-          <small id="emailHelp" className="form-text text-muted" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Телефон</label>
-          <input type="tel" name="tel" onChange={changeHandler} value={inputs.tel} className="form-control" id="exampleInputTel" aria-describedby="telHelp" placeholder="Enter tel" />
-          <small id="emailHelp" className="form-text text-muted" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input type="password" name="password" onChange={changeHandler} value={inputs.password} className="form-control" id="exampleInputPassword1" placeholder="Password" />
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+    <div className="body-registration">
+      <section className="section-registration">
+        <h1 className="registration-title">Registration Page</h1>
+        <form className="form" onSubmit={submitHandler}>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Имя</label>
+            <input type="text" name="name" onChange={changeHandler} value={inputs.name} className="form-control" id="exampleInputPassword1" placeholder="Name" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputEmail1">Email</label>
+            <input type="email" name="email" onChange={changeHandler} value={inputs.email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+            <small id="emailHelp" className="form-text text-muted" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputEmail1">Телефон</label>
+            <input type="tel" name="tel" onChange={changeHandler} value={inputs.tel} className="form-control" id="exampleInputTel" aria-describedby="telHelp" placeholder="Enter tel" />
+            <small id="emailHelp" className="form-text text-muted" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Password</label>
+            <input type="password" name="password" onChange={changeHandler} value={inputs.password} className="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <button type="submit" className="btn btn-registration">Submit</button>
+        </form>
+      </section>
     </div>
   );
 }

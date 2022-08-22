@@ -16,7 +16,7 @@ export default function Header({ authState, setAuthState }) {
   return (
     <header>
       <div>
-        <img className="header-logo" src="https://img2.freepng.ru/20180401/fqq/kisspng-logo-small-business-handshake-marketing-joint-5ac09c4a29ec66.8818838615225723621717.jpg" alt="logo" />
+        <img className="header-logo" src="/imge/logo.png" alt="logo" />
       </div>
       <div>
         <h1 className="header-title">Deliveri-cebab</h1>

@@ -10,6 +10,7 @@ import RegistrationUser from './RegistrationUser';
 import Login from './Login';
 import List from './List';
 import Basket from './Basket';
+import UpdateProdukt from './UpdateProdukt';
 
 function App({
   order, orderid, entries, entry, userSession, basketid, listid,
@@ -32,6 +33,7 @@ function App({
             <Route path="/login" element={<Login authState={authState} setAuthState={setAuthState} />} />
             <Route path="/basket/:id" element={<Basket basketid={basketid} />} />
             <Route path="/list/:id" element={<List listid={listid} />} />
+            <Route path="/update/:id" element={<UpdateProdukt authState={authState} setAuthState={setAuthState} orderid={orderid} />} />
           </Routes>
         </div>
 
