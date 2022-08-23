@@ -289,6 +289,7 @@ header {
 }
 
 .registration-link-left {
+  padding-left: 31%;
   text-decoration: none;
   font-size: 40px;
   font-weight: bold;
@@ -306,6 +307,7 @@ header {
 
 .registration-link-right {
   text-decoration: none;
+  padding-left: 16%;
   font-size: 40px;
   font-weight: bold;
   color: rgb(255, 255, 255);
@@ -321,8 +323,7 @@ header {
 }
 
 .registration-links-container {
-  display: flex;
-  flex-wrap: wrap;
+
 }
 #containerMap {
   width: 36%;

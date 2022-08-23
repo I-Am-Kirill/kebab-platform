@@ -24,7 +24,7 @@ function App({
       <div className="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
         <div className="max-w-700 center">
           <Routes>
-            <Route path="/" element={<HeaderList order={order} />} />
+            <Route path="/" element={<HeaderList order={order} authState={authState} />} />
             <Route path="/details/:id" element={<ProduktDetails authState={authState} setAuthState={setAuthState} orderid={orderid} />} />
             <Route path="/addProdukt" element={<AddProdukt authState={authState} setAuthState={setAuthState} />} />
             <Route path="/registration" element={<Registration />} />

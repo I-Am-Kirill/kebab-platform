@@ -36,24 +36,24 @@ route.get('/', async (req, res) => {
       // console.log('27 headerList', pointStart, pointEnd);
       //
       //
-      // const getDistance = await axios.post(
-      //   'https://routing.api.2gis.com/get_dist_matrix?key=07916d49-e084-453b-956c-bcb324ed1487&version=2.0',
-      //   {
-      //     points: [
-      //       pointStart,
-      //       pointEnd,
-      //     ],
-      //     sources: [
-      //       0,
-      //     ],
-      //     targets: [
-      //       1,
-      //     ],
-      //   },
-      // );
-      // const { distance } = getDistance.data.routes[0];
-      // order1[i].dataValues.distance = distance;
-      order1[i].dataValues.distance = 15;
+      const getDistance = await axios.post(
+        'https://routing.api.2gis.com/get_dist_matrix?key=07916d49-e084-453b-956c-bcb324ed1487&version=2.0',
+        {
+          points: [
+            pointStart,
+            pointEnd,
+          ],
+          sources: [
+            0,
+          ],
+          targets: [
+            1,
+          ],
+        },
+      );
+      const { distance } = getDistance.data.routes[0];
+      order1[i].dataValues.distance = distance;
+      // order1[i].dataValues.distance = 15;
       //
       //
       // console.log(getDistance.data);

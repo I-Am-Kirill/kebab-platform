@@ -18,11 +18,11 @@ export default function Registration() {
         <h1 className="registration-title">Registration</h1>
         <h2 className="registration-description">Кто вы?</h2>
         <div className="registration-links-container">
-          <div className="registration-link-left-container">
-            <Link className="registration-link-left" to="/regWoker">Курьер</Link>
-          </div>
           <div className="registration-link-right-container">
             <Link className="registration-link-right" to="/regUser">Пользователь</Link>
+          </div>
+          <div className="registration-link-left-container">
+            <Link className="registration-link-left" to="/regWoker">Курьер</Link>
           </div>
         </div>
       </section>

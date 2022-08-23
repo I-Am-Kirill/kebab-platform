@@ -19,7 +19,7 @@ export default function Header({ authState, setAuthState }) {
         <img className="header-logo" src="/imge/logo.png" alt="logo" />
       </div>
       <div>
-        <h1 className="header-title">Deliveri-cebab</h1>
+        <h1 className="header-title">Delivery-Kebab</h1>
       </div>
       <div className="container-links-header">
         <h3 className="header-link"><Link className="header-link" to="/">Home</Link></h3>
