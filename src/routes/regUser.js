@@ -1,7 +1,10 @@
 import express from 'express';
+import React from 'react';
 import bcrypt from 'bcrypt';
 import axios from 'axios';
+import { renderToString } from 'react-dom/server';
 import { user } from '../db/models';
+import Layout from '../components/Layout';
 
 const route = express.Router();
 
